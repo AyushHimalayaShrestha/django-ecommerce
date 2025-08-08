@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>Product Lists</h1>
+
+<div class="max-w-7xl mx-auto grid grid-cols-4 gap-10 my-10 ">
+    {% for product in products %}
+ <div class="group relative">
+        <img src="{{product.image}}" alt="{{product.product_name}}" class="rounded-md aspect-square" />
+        <div class="space-y-2 mb-4">
+          <div>
+            <h3 class="text-gray-700 font-semibold mt-4">
+              <a href="{% url 'product_details' product.id %}">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                {{product.product_name}}
+              </a>
+            </h3>
+          </div>
+          <p class="text-sm font-medium text-gray-900">Rs{{product.product_price}}</p>
+        </div>
+        <button class="bg-gray-900 text-white px-4 py-2 rounded-md w-full space-x-2">
+            <span>Add to Cart</span>
+            <i class="bi bi-cart"></i>
+        </button>
+      </div>
+{% endfor %}
+</div>
+{% endblock %}
