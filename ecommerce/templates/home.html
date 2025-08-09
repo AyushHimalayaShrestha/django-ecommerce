@@ -52,6 +52,7 @@
         nav ul {
             display: flex;
             list-style: none;
+            
         }
 
         nav ul li {
@@ -89,14 +90,15 @@
 
         /* Hero Section */
         .hero {
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('https://www.neostore.com.np/assets/uploads/9ba3c-whatsapp-image-2025-03-07-at-16.06.57_caac862a.jpg');
             background-size: cover;
             background-position: center;
-            height: 400px;
+            height: 500px;
             display: flex;
             align-items: center;
             text-align: center;
-            color: white;
+            color: rgb(174, 170, 170);
+            
         }
 
         .hero-content {
@@ -372,13 +374,13 @@
             <!-- Product 1 -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Drill Machine">
+                    <img src="https://www.neostore.com.np/assets/uploads/iphone_2.jpg" alt="Iphone15promax">
                 </div>
                 <div class="product-info">
-                    <h3>Power Drill Pro X200</h3>
-                    <p>Professional cordless drill with 20V battery and 30 accessories</p>
+                    <h3>{{product.product_name}}</h3>
+                    <p>FORGED IN TITANIUM,ADVANCED DISPLAY,GAME-CHANGING A17 PRO CHIP,POWERFUL PRO CAMERA SYSTEM,CUSTOMIZABLE ACTION BUTTON </p>
                     <div class="product-price">
-                        <span class="price">$89.99</span>
+                        <span class="price">Rs{{product.product_price}} </span>
                         <button class="add-to-cart">Add to Cart</button>
                     </div>
                 </div>
