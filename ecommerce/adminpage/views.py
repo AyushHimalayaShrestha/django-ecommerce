@@ -23,7 +23,7 @@ def add_product(request):
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-        return redirect('add_product')
+        return redirect('dashboard_product_lists')
 
     else:
         form=ProductForm()
@@ -33,4 +33,4 @@ def add_product(request):
 
 def products(request):
     product_lists = Product.objects.all()
-    return render(request,'dashboard_product_lists.html',{'product':product_lists})
+    return render(request,'dashboard_product_lists.html',{'products':product_lists})
