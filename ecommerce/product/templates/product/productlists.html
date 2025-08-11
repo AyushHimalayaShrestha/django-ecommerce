@@ -6,7 +6,7 @@
 <div class="max-w-7xl mx-auto grid grid-cols-4 gap-10 my-10 ">
     {% for product in products %}
  <div class="group relative">
-        <img src="{{product.image}}" alt="{{product.product_name}}" class="rounded-md aspect-square" />
+        <img src="{{product.image.url}}" alt="{{product.product_name}}" class="rounded-md aspect-square" />
         <div class="space-y-2 mb-4">
           <div>
             <h3 class="text-gray-700 font-semibold mt-4">

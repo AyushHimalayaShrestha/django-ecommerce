@@ -15,7 +15,7 @@ class Product(models.Model):
     product_price=models.IntegerField(null=True)
     description=models.TextField(null=True)
     quantity=models.IntegerField(null=True)
-    image= models.URLField(null=True)
+    image= models.FileField(upload_to="products/")
     category= models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
     created_at=models.DateTimeField(auto_now_add=True)
 
