@@ -32,8 +32,8 @@
            <img src="{{product.image.url}}" alt="product.product_name" class="h-12 w-12 rounded-full object-center object-cover">
           </td>
           <td class="px-6 py-4 text-right">
-            <button class="text-blue-500 hover:underline text-xs mr-2">Edit</button>
-            <button class="text-red-500 hover:underline text-xs">Delete</button>
+       <a href="{% url 'update_product' product.id %}" > <button class="text-blue-500 hover:underline text-xs mr-2" >Edit</button></a>
+          <a href="{% url 'delete_product' product.id %}">  <button class="text-red-500 hover:underline text-xs">Delete</button></a>
           </td>
         </tr>
          {% endfor %}
