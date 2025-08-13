@@ -1,7 +1,15 @@
 {% extends 'dashboard_layout.html' %}
 
 {% block content %}
-
+{% if messages %}
+{% for message in messages %}
+{% if 'success' in message.tags %}
+<p class="text-green-500">{{message}}</p>
+{% elif 'error' in message.tags %}
+<p class="text-red">{{message}}</p>
+{% endif %}
+{% endfor %}
+{% endif %}
 <h1>Product Lists</h1>
 <section class="mt-10">
   <h2 class="text-xl font-semibold mb-4">Product List</h2>
@@ -23,7 +31,7 @@
      
          {% for product in products %}
           <tr class="border-b hover:bg-gray-50">
-          <td class="px-6 py-4"></td>
+          <td class="px-6 py-4">{{forloop.counter}}</td>
           <td class="px-6 py-4 font-medium text-gray-900">{{product.product_name |truncatechars:20 }}</td>
           <td class="px-6 py-4">{{product.category}}</td>
           <td class="px-6 py-4">{{product.product_price}}</td>

@@ -68,12 +68,16 @@ def delete_product(request, product_id):
 def update_category(request, category_id):
     instance= Category.objects.get(id=category_id)
     if request.method == 'POST':
-        form=CategoryForm(request.POST,request.FILES,instance=instance)
+        form=CategoryForm(request.POST,instance=instance)
         if form.is_valid():
             form.save()
-            messages.success('Category updated successfully!')
+            messages.success(request,'Category updated successfully!')
             return redirect('dashboard_category_lists')
         else:
-            form=CategoryForm(instance=instance)
+            messages.error(request,"Error,Something went wrong!")
+            
     else:
-        return render(request,'update_category.html',{'form':form})
+        form=CategoryForm(instance=instance)
+    return render(request,'update_category.html',{'form':form})
+
+
