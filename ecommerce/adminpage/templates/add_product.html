@@ -4,11 +4,11 @@
 {% block content %}
 
 
-<form method="POST" class="max-w-2xl ml-10 border p-4 rounded-md" enctype="multipart/form-data">
-    <h1 class="text-2xl font-semibold mb-10 text-blue-800 text-center">Add Product</h1>
-    {% csrf_token %}
-    {{ form|crispy }}
-    <button type="submit" class="bg-slate-800 hover:bg-slate-800/90 w-full py-2 text-white rounded-md" >Save</button>
-</form>
+    <form method="POST" class="max-w-2xl ml-10 border p-4 rounded-md" enctype="multipart/form-data">
+        <h1 class="text-2xl font-semibold mb-10 text-blue-800 text-center">Add Product</h1>
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="bg-slate-800 hover:bg-slate-800/90 w-full py-2 text-white rounded-md" >Save</button>
+    </form>
 
 {% endblock %}

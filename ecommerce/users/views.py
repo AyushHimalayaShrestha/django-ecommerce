@@ -31,13 +31,21 @@ def login_view(request):
             if user is not None:
                 login(request,user)
                 messages.success(request,'Login successful')
-                return redirect('/')
             
-            else:
+                if user.is_staff:
+                    return redirect('dashboard_product_lists')
+                else:
+                    next_url =request.GET.get('next','/')
+                    return redirect(next_url)
+            
+        else:
                 messages.error('Login Failed!')
 
     else:
         form = LoginForms()
         return render(request,'login.html',{'form':form})
     
-
+def logout_view(request):
+    logout(request)
+    messages.success(request,"User Logged Out Successfully!")
+    return redirect('login_view')

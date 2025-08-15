@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="max-w-7xl mx-auto px-4 py-16 pt-24">
+  <h1 class="text-3xl font-bold text-slate-800 mb-8">Shopping Cart</h1>
+
+  <!-- Cart Items -->
+  <div class="space-y-6 max-w-4xl">
+    <!-- Single Cart Item -->
+    <div class="flex items-center gap-6 border border-slate-200 rounded-lg p-5 shadow-sm hover:shadow-md transition relative bg-white">
+      <!-- Product Image -->
+      <img
+        src="https://via.placeholder.com/150"
+        alt="Product Name"
+        class="w-28 h-28 rounded-lg object-cover"
+      />
+
+      <!-- Product Info -->
+      <div class="flex-1">
+        <h2 class="text-lg font-semibold text-slate-800">Product Name</h2>
+        <p class="text-slate-500 mt-1">$45.00</p>
+        <p class="text-sm text-slate-600 mt-1">Quantity: 2</p>
+      </div>
+
+      <!-- Actions -->
+      <div class="flex flex-col items-end justify-between h-full">
+        <!-- Remove Button -->
+        <button class="text-slate-400 hover:text-red-500 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+          </svg>
+        </button>
+
+        <!-- Order Now -->
+        <a href="#"
+          class="text-sm font-medium text-sky-600 hover:text-sky-700 transition">
+          Order Now
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Empty Cart State -->
+  <!-- <p class="text-slate-500">Your cart is empty.</p> -->
+</div>
+{% endblock %}
