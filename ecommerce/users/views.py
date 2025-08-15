@@ -4,7 +4,11 @@ from django.contrib import messages
 from . forms import LoginForms
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from .auth import redirect_if_logged_in
 # Create your views here.
+
+#register view
+@redirect_if_logged_in
 def register_view(request):
     if request.method == 'POST':
         form =UserCreationForm(request.POST)
@@ -19,6 +23,8 @@ def register_view(request):
 
     return render(request,'register.html',{'form':form})
 
+#login view
+@redirect_if_logged_in
 def login_view(request):
     if request.method == 'POST':
         form = LoginForms(request.POST)
@@ -45,6 +51,8 @@ def login_view(request):
         form = LoginForms()
         return render(request,'login.html',{'form':form})
     
+
+# logout view
 def logout_view(request):
     logout(request)
     messages.success(request,"User Logged Out Successfully!")
